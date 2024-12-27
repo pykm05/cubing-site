@@ -1,18 +1,26 @@
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom';
+
+const NAV_ITEMS = [
+    { name : "Virtual Cube", path : "/" },
+    { name : "first", path : "/first" },
+    { name: "second", path : "/second" }
+]
 
 function NavBar() {
-
     const navigate = useNavigate();
+    const location = useLocation();
 
     return (
-        <nav className="flex flex-col absolute gap-20 top-0 left-0 w-60 h-screen bg-sky-50">
+        <aside className="w-52 h-screen flex flex-col bg-sky-50">
             <div>
-                <div onClick={() => navigate('/')} className="hover:bg-sky-100 px-5 py-5">Virtual Cube</div>
-                <div onClick={() => navigate('/first')} className="hover:bg-sky-100 px-5 py-3">option 1</div>
-                <div onClick={() => navigate('/second')} className="hover:bg-sky-100 px-5 py-3">option 2</div>
+                {NAV_ITEMS.map(({ name , path }) => (
+                    <div onClick={() => (navigate(path))} className={`px-5 py-5 ${location.pathname === path ? "bg-sky-200" : "bg-sky-50 hover:bg-sky-100"}`} key={path} >
+                        {name}
+                    </div>
+                ))}
             </div>
-        </nav>
-    )
+        </aside>
+    );
 }
 
-export default NavBar
+export default NavBar;

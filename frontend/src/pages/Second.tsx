@@ -1,11 +1,15 @@
 import NavBar from '../components/NavBar.tsx'
+import Header from '../components/Header.tsx'
 
 function Second() {
     return (
-        <>
+        <div className="box-border flex">
             <NavBar />
-            <div className="">second</div>
-        </>
+            <div className="flex flex-1 flex-col bg-sky-200">
+                <Header />
+                <div className="flex flex-1">hello</div>
+            </div>
+        </div>
     )
 }
 
