@@ -6,7 +6,7 @@ function Header() {
     <div className="flex justify-end items-center h-16 pr-5 bg-white">
         <div className="flex justify-end items-center gap-6">
             <img src={NotificationsActive} alt="notification icon" className="h-7 w-auto" />
-            <div className="flex justify-center items-center gap-3">
+            <div onClick={() => {}} className="flex justify-center items-center gap-3">
                 <img src={AccountCircle} alt="profile picture" className="h-12 w-auto" />
                 <div>Aaron Pang</div>
             </div>
